@@ -1,0 +1,26 @@
+class Solution {
+    public int maxProfit(int[] prices) {
+        int mp=Integer.MIN_VALUE;
+        int p=0;
+        for(int i=0;i<prices.length;i++){
+            for(int j=i+1;j<prices.length;j++){
+                p=prices[j]-prices[i];
+                if(p>mp){
+                    mp=p;
+                }
+            }
+        }
+        if(mp<0){
+            return 0;
+        }
+        else{
+            return mp;
+        }
+    }
+    public static void main(String args[]){
+        int[] prices={7,1,2,3,6,4};
+        Solution a=new Solution();
+        System.out.print(a.maxProfit(prices));
+        
+    }
+}
