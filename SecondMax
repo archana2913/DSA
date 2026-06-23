@@ -1,0 +1,24 @@
+import java.util.*;
+public class Smax{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.print("enter a number: ");
+        int n=sc.nextInt();
+        int[] a=new int[n];
+        int fmax=Integer.MIN_VALUE;
+        int sm=Integer.MIN_VALUE;
+        for(int i=0;i<n;i++){
+            a[i]=sc.nextInt();
+        }
+        for(int i=0;i<n;i++){
+            if(a[i]>fmax){
+                sm=fmax;
+                fmax=a[i];
+            }
+            else if(a[i]>sm && a[i]<fmax){
+                sm=a[i];
+            }
+        }
+        System.out.print("SECOND MAX:"+sm);
+    }
+}
