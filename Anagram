@@ -1,0 +1,25 @@
+import java.util.*;
+class Anagram
+{
+    static void anagram(){
+        String s1="listen";
+        String s2="silent";
+        s1=s1.toLowerCase();//listen
+        s2=s2.toLowerCase();//silent
+        char[] a1= s1.toCharArray(); //{l,i,s,t,e,n}
+        char[] a2= s2.toCharArray();
+        Arrays.sort(a1);//{e,i,l,n,s,t}
+        Arrays.sort(a2);//{e,i,l,n,s,t}
+        if(Arrays.equals(a1,a2)){
+            System.out.print("Anagram");
+        }
+        else{
+            System.out.print("Not Anagram");
+        }
+
+    }
+    public static void main(String args[]){
+        anagram();
+    
+    }
+}
