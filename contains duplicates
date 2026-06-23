@@ -1,0 +1,18 @@
+import java.util.*;
+public class Main {
+    public boolean containsDuplicate(int[] nums) {
+        HashMap<Integer,Integer> map=new HashMap<>();
+        for(int i:nums){
+            if(map.containsKey(i)){
+                return true;
+            }
+            map.put(i,1);
+        }
+       return false;
+    }
+    public static void main(String[] args) {
+        int[] nums={1,2,3,1};
+        Main a=new Main();
+        System.out.print(a.containsDuplicate(nums));
+    }
+}
