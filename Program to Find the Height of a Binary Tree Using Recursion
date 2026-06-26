@@ -1,0 +1,28 @@
+//Program to Find the Height of a Binary Tree Using Recursion
+class Node
+ {
+    int data;
+    Node left;
+    Node right;
+    Node(int u){
+        this.data=u;
+        this.left=null;
+        this.right=null;
+    }
+    static int h(Node root)
+    {
+        if(root==null){
+            return -1;
+        }
+        return Math.max(h(root.left),h(root.right))+1;
+    }
+    public static void main(String[] args) {
+        Node root=new Node(10);
+        root.left=new Node(5);
+        root.right=new Node(15);
+        root.left.right=new Node(7);
+        root.left.right.left=new Node(6);
+        root.left.right.right=new Node(8);
+        System.out.println("height:"+h(root));
+    }
+}
